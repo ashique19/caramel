@@ -1,0 +1,50 @@
+@import "front.sass"
+@import "back_sidebar.sass"
+@import "calendar7.sass"
+
+
+.calendar-7
+    background-color: $black
+    
+.calendar-7 .days .calendar-7-day:hover, .calendar-7 .days .calendar-7-day.active
+    background-color: $yellow
+    
+    span
+        font-weight: 700
+        
+.collapse
+    display: none !important
+    overflow: hidden
+    
+    &.in
+        display: block !important
+        
+.counter
+    position: fixed
+    bottom: 0
+    width: 100%
+    padding: 3px 10px
+    background-color: $black
+    color: $white
+    left: 0
+    font-size: 12px
+
+.floating-nav
+    position: fixed
+    right: 0px
+    top: 50%
+    transform: rotate(90deg)
+    z-index: 1000
+    margin: 0px !important
+    padding: 0px !important
+    
+    .button
+        border-radius: 50%
+        background-color: rgba(255,255,255,0.7)
+        color: $green
+
+.option-group
+    position: fixed
+    bottom: 17px
+    background-color: white
+    padding: 2px

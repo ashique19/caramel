@@ -1,0 +1,145 @@
+    
+/** Padding, Margin **/
+
+=paddings($devide: 1)
+    
+    @each $px in 0,2,3,5,10,15,20,25,30,40,50,60,70,100
+        
+        @each $type in padding,margin
+            
+            @each $direction in top,bottom,left,right
+                
+                .#{$type}-#{$direction}-#{$px}
+                    #{$type}-#{$direction}: #{$px/$devide}px
+                    
+                .#{$type}-#{$px}
+                    #{$type}: #{$px/$devide}px
+
+=xspaddings($devide: 1)
+    
+    @each $px in 0,2,3,5,10,15,20,25,30,40,50,60,70,100,150
+        
+        @each $type in padding,margin
+            
+            @each $direction in top,bottom,left,right
+                
+                .xs-#{$type}-#{$direction}-#{$px}
+                    #{$type}-#{$direction}: #{$px/$devide}px
+                    
+                .xs-#{$type}-#{$px}
+                    #{$type}: #{$px/$devide}px
+                    
+                    
+                
+/** HEIGHT **/
+
+=heights($multiply: 1)
+
+    @each $px in 0,3,5,10,20,30,40,50,60,70,80,90,100,150,200,300,400
+        
+        @each $type in height,min-height,max-height,width
+            .#{$type}-#{ $px }
+                #{ $type }: #{ $px * $multiply }px
+    
+    
+/** HEIGHT **/
+
+=xsheights($multiply: 1)
+
+    @each $px in 0,3,5,10,20,30,40,50,60,70,80,90,100,150,200,300,400
+        
+        @each $type in height,min-height,max-height,width
+            .xs-#{$type}-#{ $px }
+                #{ $type }: #{ $px * $multiply }px
+    
+    
+
+/** TEXT, BACKGROUND, BORDER COLOR **/  
+
+=colors()
+    @each $name,$value in ("white": $white,"black": $black,"blue": $blue,"navy": $navy,"green": $green,"orange": $orange,"red": $red,"gray": $gray,"lightGray": $lightGray,"offwhite": $offwhite,"yellow": $yellow, 'transparent': $transparent)
+        
+        .#{ $name }-text
+            color: #{ $value }
+            
+        .#{ $name }-bg
+            background-color: #{ $value }
+            
+        .btn-#{$name}
+            background-color: #{$value}
+            border-color: #{$value}
+            box-shadow: 0px 0px 0px transparent
+            
+        .alert-#{$name}
+            background-color: #{$value}
+            
+        .#{ $name }-border
+            border-color: #{ $value }
+            
+        @each $direction in top,right,bottom,left
+            .#{ $name }-#{ $direction }-border
+                border-#{ $direction }-color: #{ $value }
+            
+
+/** FONT SIZES **/  
+
+=fontsizes($devide : 1)
+    
+    @each $size in 10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,44,48,50,52,60,62,70,72
+        
+        .font-size-#{ $size }
+            font-size: #{ $size / $devide }px
+    
+/** FONT SIZES **/  
+
+=xsfontsizes($devide : 1)
+    
+    @each $size in 10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,44,48,50,52,60,62,70,72
+        
+        .xs-font-size-#{ $size }
+            font-size: #{ $size / $devide }px
+    
+
+/** FONT WEIGHTS **/  
+
+=fontweights()
+    
+    @each $weight in 100,200,300,400,500,600,700
+        
+        .font-weight-#{ $weight }
+            font-weight: #{ $weight }
+            
+
+/** BORDER RADIUSES **/  
+
+=borderRadiouses()
+    
+    @each $radius in 0,1,2,3,5,7,10,12,15,20,25,50,100
+        
+        .border-radius-#{ $radius }
+            border-radius: #{ $radius }px
+
+
+/** BORDER WIDTH **/  
+
+=borderWidth()
+    
+    @each $width in 0,1,2,3,5,10
+        
+        .border-width-#{ $width }
+            border-width: #{ $width }px
+
+
++paddings()
++heights()
++colors()
++fontsizes()
++fontweights()
++borderRadiouses()
++borderWidth()
+
+@media (max-width: 768px)
+    +paddings(1)
+    +xsheights(1)
+    +xsfontsizes(1)
+    +xspaddings(1)

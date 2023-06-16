@@ -1,0 +1,114 @@
+@import "1-variables.sass"
+@import "2-methods-and-loops.sass"
+@import "3-other-general-classes.sass"
+@import "4-header.sass"
+@import "5-footer.sass"
+
+
+.navbar-item img
+    max-height: 2.5rem
+    
+.container
+    max-width: 100%
+    
+.slick-next
+    right: 15px
+    
+.slick-prev
+    left: 15px
+    
+.slick-next, .slick-prev
+    z-index: 1
+    
+    
+.category-thumb
+    position: relative
+    
+    img
+        height: 200px
+        width: auto
+        max-width: 100%
+    
+    .show-all
+        position: absolute
+        bottom: 0
+        padding: 0
+        opacity: 0.8
+        border: 0px transparent
+        overflow: hidden
+        transition: all 0.5s linear
+        font-weight: 700
+        width: 100%
+        
+        a
+            width: 100%
+            text-align: center
+            display: block
+            background-color: rgba(0,0,0,0.3)
+            padding: 5px 0
+            line-height: 1
+            
+            .small
+                font-size: 10px
+        
+    .status
+        position: absolute
+        top: 15px
+        right: 15px
+        
+    &:hover
+        
+        .show-all
+            padding: 3px
+            opacity: 1
+            border: 0px transparent
+            
+.searched-items
+    position: absolute
+    padding: 0 13px
+    
+    .card
+        max-height: 250px
+        overflow-y: scroll
+        box-shadow: 0 0
+        
+        .media
+            margin: 5px
+            
+.thumb-holder
+    position: relative
+    
+    h2, h3
+        position: absolute
+        bottom: 0
+        width: 100%
+        padding: 12px 0px
+        background-color: rgba(0,0,0,0.3)
+        text-transform: uppercase
+        font-weight: 700
+        transition: all 0.4s linear
+        
+    &:hover
+        
+        h2, h3
+            padding: 50% 0px
+            background-color: rgba(0,0,0,0.6)
+    
+    
+.category-sidebar .prev, .category-sidebar .next
+        display: none
+        
+.tag.selectable
+    position: relative
+    
+    input[type=checkbox]
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index: 1
+        opacity: 0
+            
+@media only screen and (max-width: 768px)
+    @import "768.sass"
